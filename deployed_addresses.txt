@@ -1,0 +1,4 @@
+deployed contract : 0x1e345a31E1CA0C870607B560Fc66CaA2E10017e5
+Testnet : Rinkeby
+
+EtherScan : https://rinkeby.etherscan.io/tx/0xbe9346a0b0378f29e33b9a382cdf146d7ca407efafd7dc09ebe52e39f5ef896a
