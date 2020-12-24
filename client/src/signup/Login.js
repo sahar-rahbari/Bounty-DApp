@@ -1,30 +1,39 @@
 import React, {useEffect, useState} from 'react';
 import {Card, CardHeader, Button, CardBody, FormGroup, Label, Input} from 'reactstrap';
-import getWeb3 from "../getWeb3";
-import BountyApp from "../ethereum/BountyApp";
-import abiDecoder from "abi-decoder";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useLocation,
+    useHistory,
+    Redirect
+} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {accountInitialize, contractInitialize,  web3Initialize} from "../ContractInitialize";
 
 const Login = (props) => {
 
+    const history = useHistory();
+
+    const contract = props.contract;
+    const accounts = props.accounts;
+
+
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const [web3, setWeb3] = useState(null);
-    const [accounts, setAccounts] = useState(null);
-    const [contract, setContract] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
 
-        accountInitialize().then(acc => setAccounts(acc));
-        contractInitialize().then(contract => setContract(contract));
-        web3Initialize().then(web3 => setWeb3(web3));
+        setLoading(false);
 
     }, []);
 
     const login = async () => {
+
         await contract.methods.login(userName,password).send({from: accounts[0], gas: 500000},(err,txHash)=> {
             if (err) {
                 toast.error('This information is not valid');
@@ -38,7 +47,7 @@ const Login = (props) => {
                     }
                 );
 
-                props.history.push('/Jobs');
+                history.push('/Jobs');
             }
         });
     } ;
@@ -51,35 +60,39 @@ const Login = (props) => {
     };
 
     return(
-
         <Card>
-            <ToastContainer
-                autoClose={2000}
-            />
-            <CardHeader>Login</CardHeader>
-            <CardBody>
-                <FormGroup className='col-sm-4'>
-                    <Label for="userName">User Name</Label>
-                    <Input
-                        type="text"
-                        name="userName"
-                        id="userName"
-                        placeholder="User Name"
-                        onChange={userNameChange}
-                    />
-                </FormGroup>
-                <FormGroup className='col-sm-4'>
-                    <Label for="password">Password</Label>
-                    <Input
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Password"
-                        onChange={passwordChange}
-                    />
-                </FormGroup>
-                <Button type="submit" color="success" className='col-sm-1' onClick={()=>login()}>Login</Button>
-            </CardBody>
+            {
+                !loading ?
+                    <React.Fragment>
+                        <ToastContainer
+                            autoClose={2000}
+                        />
+                        <CardHeader>Login</CardHeader>
+                        <CardBody>
+                            <FormGroup className='col-sm-4'>
+                                <Label for="userName">User Name</Label>
+                                <Input
+                                    type="text"
+                                    name="userName"
+                                    id="userName"
+                                    placeholder="User Name"
+                                    onChange={userNameChange}
+                                />
+                            </FormGroup>
+                            <FormGroup className='col-sm-4'>
+                                <Label for="password">Password</Label>
+                                <Input
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Password"
+                                    onChange={passwordChange}
+                                />
+                            </FormGroup>
+                            <Button type="submit" color="success" className='col-sm-1' onClick={()=>login()}>Login</Button>
+                        </CardBody>
+                    </React.Fragment> : null
+            }
         </Card>
     )
 };

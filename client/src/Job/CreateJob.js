@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {Card, CardHeader, Button, CardBody, FormGroup, Label, Input} from 'reactstrap';
-import getWeb3 from "../getWeb3";
-import BountyApp from "../ethereum/BountyApp";
-import abiDecoder from "abi-decoder";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {toast, ToastContainer} from "react-toastify";
-import {accountInitialize, contractInitialize, web3Initialize} from "../ContractInitialize";
+import {useHistory, useLocation} from "react-router-dom";
 
 
 const CreateJob = (props) => {
+
+    const contract = props.contract;
+    const accounts = props.accounts;
+    const web3 = props.web3;
+    const history = useHistory();
+    const location = useLocation();
 
     const [jobId, setJobId] = useState(null);
     const [title, setTitle] = useState('');
@@ -16,15 +19,10 @@ const CreateJob = (props) => {
     const [employer, setEmployer] = useState('');
     const [status, setStatus] = useState(0);
     const [price, setPrice] = useState(null);
-    const [web3, setWeb3] = useState(null);
-    const [accounts, setAccounts] = useState(null);
-    const [contract, setContract] = useState(null);
+
 
     useEffect(()=>{
 
-        accountInitialize().then(acc => setAccounts(acc));
-        contractInitialize().then(contract => setContract(contract));
-        web3Initialize().then(web3 => setWeb3(web3));
 
     }, []);
 
@@ -46,7 +44,7 @@ const CreateJob = (props) => {
                         setPrice(res.returnValues.price);
                     }
                 );
-                props.history.push('/Jobs');
+                history.push('/Jobs');
             }
         });
     } ;

@@ -1,13 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {Card, CardHeader, Button, Table, CardBody, Spinner, Label} from 'reactstrap';
-
-import getWeb3 from "../getWeb3";
-import BountyApp from "../ethereum/BountyApp";
-import abiDecoder from "abi-decoder";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {toast, ToastContainer} from "react-toastify";
+import {useHistory} from "react-router-dom";
 
 const Jobs = (props) => {
+
+    const contract = props.contract;
+    const accounts = props.accounts;
+    const history = useHistory();
+
 
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -15,37 +17,19 @@ const Jobs = (props) => {
 
     const [status, setStatus] = useState(null);
 
-    const [web3, setWeb3] = useState(null);
-    const [accounts, setAccounts] = useState(null);
-    const [contract, setContract] = useState(null);
 
 
     useEffect(()=>{
 
         const initJobs = async () => {
             try {
-                // Get network provider and web3 instance.
-                const web3 = await getWeb3();
-
-                // Use web3 to get the user's accounts.
-                const accounts = await web3.eth.getAccounts();
-                // Get the contract instance.
-                const networkId = await web3.eth.net.getId();
-                const deployedNetwork = BountyApp.networks[networkId];
-                const instance = new web3.eth.Contract(
-                    BountyApp.abi,
-                    '0xb948c19C6a37228AEc270926eCA7C1395Fd080Fa',
-                );
-                abiDecoder.addABI(BountyApp.abi);
-                web3.eth.handleRevert = true;
-                // Set web3, accounts, and contract to the state, and then proceed with an
 
                 let jobs = [];
 
-                await instance.methods.getJobId().call().then((res)=>{
+                await contract.methods.getJobId().call().then((res)=>{
 
                     for(let index = 1; index <= res; index++){
-                        instance.methods.getJob(index).call().then(res=>{
+                        contract.methods.getJob(index).call().then(res=>{
                             jobs.push(res);
                         });
                     }
@@ -54,9 +38,6 @@ const Jobs = (props) => {
                     setLoading(false)
                 });
 
-                setWeb3(web3);
-                setAccounts(accounts);
-                setContract(instance);
 
 
 
@@ -74,11 +55,11 @@ const Jobs = (props) => {
 
 
 
-    }, []);
+    }, [props.contract]);
 
     const createJob = async () => {
 
-        props.history.push('/CreateJob');
+        history.push('/CreateJob');
     };
     const jobsDisplay = async () => {
         setShowTable(!showTable);
@@ -97,7 +78,7 @@ const Jobs = (props) => {
     };
     const acceptByEmployer = async (index) => {
 
-        await contract.methods.confirmByEmployer(index + 1, '0x9DB7ceEFe022967f871afe1FAd23fc3EF0059bD2').send({from: accounts[0], gas: 500000},(err,txHash)=> {
+        await contract.methods.confirmByEmployer(index + 1, '0x27F82CF1b9D3798b96C02F764eF7c8c423517150').send({from: accounts[0], gas: 500000},(err,txHash)=> {
             if (err) {
                 toast.error('This Request is not valid');
             }

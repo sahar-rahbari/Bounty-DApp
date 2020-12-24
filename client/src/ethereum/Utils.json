@@ -21,24 +21,24 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x60cd61002f600b82828239805160001a6073146000811461001f57610021565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600436106056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063d8916bb914605b575b600080fd5b607760048036038101908080359060200190929190505050608d565b6040518082815260200191505060405180910390f35b6000670de0b6b3a7640000820290509190505600a165627a7a7230582035108decfc57185ff4647979fa093eec95d4972f7431cc257442a15f107db49b0029",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600436106056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063d8916bb914605b575b600080fd5b607760048036038101908080359060200190929190505050608d565b6040518082815260200191505060405180910390f35b6000670de0b6b3a7640000820290509190505600a165627a7a7230582035108decfc57185ff4647979fa093eec95d4972f7431cc257442a15f107db49b0029",
-  "sourceMap": "27:124:1:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
-  "deployedSourceMap": "27:124:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;48:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;100:4;131:7;123:5;:15;116:22;;48:98;;;:::o",
-  "source": "pragma solidity ^0.4.0;\r\n\r\nlibrary Utils {\r\n    function etherToWei(uint price) public pure returns(uint){\r\n        return price * 1 ether;\r\n    }\r\n\r\n}\r\n",
+  "bytecode": "0x60cd61002f600b82828239805160001a6073146000811461001f57610021565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600436106056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063d8916bb914605b575b600080fd5b607760048036038101908080359060200190929190505050608d565b6040518082815260200191505060405180910390f35b6000670de0b6b3a7640000820290509190505600a165627a7a7230582009ad329b456986f94c1a37d8632d87499a7b565a416ccaeef51e5687a18d00470029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600436106056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063d8916bb914605b575b600080fd5b607760048036038101908080359060200190929190505050608d565b6040518082815260200191505060405180910390f35b6000670de0b6b3a7640000820290509190505600a165627a7a7230582009ad329b456986f94c1a37d8632d87499a7b565a416ccaeef51e5687a18d00470029",
+  "sourceMap": "35:136:1:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
+  "deployedSourceMap": "35:136:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;60:102;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;112:4;143:7;135:5;:15;128:22;;60:102;;;:::o",
+  "source": "    pragma solidity ^0.4.0;\r\n\r\n    library Utils {\r\n        function etherToWei(uint price) public pure returns(uint){\r\n        return price * 1 ether;\r\n        }\r\n\r\n    }\r\n\r\n\r\n\r\n",
   "sourcePath": "G:\\Work\\Ponisha\\SCPonisha\\SCReact\\contracts\\Utils.sol",
   "ast": {
     "absolutePath": "/G/Work/Ponisha/SCPonisha/SCReact/contracts/Utils.sol",
     "exportedSymbols": {
       "Utils": [
-        674
+        680
       ]
     },
-    "id": 675,
+    "id": 681,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 661,
+        "id": 667,
         "literals": [
           "solidity",
           "^",
@@ -46,7 +46,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:1"
+        "src": "4:23:1"
       },
       {
         "baseContracts": [],
@@ -54,18 +54,18 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 674,
+        "id": 680,
         "linearizedBaseContracts": [
-          674
+          680
         ],
         "name": "Utils",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 672,
+              "id": 678,
               "nodeType": "Block",
-              "src": "105:41:1",
+              "src": "117:45:1",
               "statements": [
                 {
                   "expression": {
@@ -74,19 +74,19 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 670,
+                    "id": 676,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "argumentTypes": null,
-                      "id": 668,
+                      "id": 674,
                       "name": "price",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 663,
-                      "src": "123:5:1",
+                      "referencedDeclaration": 669,
+                      "src": "135:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -97,14 +97,14 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "31",
-                      "id": 669,
+                      "id": 675,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "131:7:1",
+                      "src": "143:7:1",
                       "subdenomination": "ether",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_1000000000000000000_by_1",
@@ -112,21 +112,21 @@
                       },
                       "value": "1"
                     },
-                    "src": "123:15:1",
+                    "src": "135:15:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 667,
-                  "id": 671,
+                  "functionReturnParameters": 673,
+                  "id": 677,
                   "nodeType": "Return",
-                  "src": "116:22:1"
+                  "src": "128:22:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 673,
+            "id": 679,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -134,16 +134,16 @@
             "name": "etherToWei",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 664,
+              "id": 670,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 663,
+                  "id": 669,
                   "name": "price",
                   "nodeType": "VariableDeclaration",
-                  "scope": 673,
-                  "src": "68:10:1",
+                  "scope": 679,
+                  "src": "80:10:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -151,10 +151,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 662,
+                    "id": 668,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "68:4:1",
+                    "src": "80:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -164,20 +164,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "67:12:1"
+              "src": "79:12:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 667,
+              "id": 673,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 666,
+                  "id": 672,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 673,
-                  "src": "100:4:1",
+                  "scope": 679,
+                  "src": "112:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -185,10 +185,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 665,
+                    "id": 671,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "100:4:1",
+                    "src": "112:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -198,33 +198,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "99:6:1"
+              "src": "111:6:1"
             },
-            "scope": 674,
-            "src": "48:98:1",
+            "scope": 680,
+            "src": "60:102:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 675,
-        "src": "27:124:1"
+        "scope": 681,
+        "src": "35:136:1"
       }
     ],
-    "src": "0:153:1"
+    "src": "4:175:1"
   },
   "legacyAST": {
     "absolutePath": "/G/Work/Ponisha/SCPonisha/SCReact/contracts/Utils.sol",
     "exportedSymbols": {
       "Utils": [
-        674
+        680
       ]
     },
-    "id": 675,
+    "id": 681,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 661,
+        "id": 667,
         "literals": [
           "solidity",
           "^",
@@ -232,7 +232,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:1"
+        "src": "4:23:1"
       },
       {
         "baseContracts": [],
@@ -240,18 +240,18 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 674,
+        "id": 680,
         "linearizedBaseContracts": [
-          674
+          680
         ],
         "name": "Utils",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 672,
+              "id": 678,
               "nodeType": "Block",
-              "src": "105:41:1",
+              "src": "117:45:1",
               "statements": [
                 {
                   "expression": {
@@ -260,19 +260,19 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 670,
+                    "id": 676,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "argumentTypes": null,
-                      "id": 668,
+                      "id": 674,
                       "name": "price",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 663,
-                      "src": "123:5:1",
+                      "referencedDeclaration": 669,
+                      "src": "135:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -283,14 +283,14 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "31",
-                      "id": 669,
+                      "id": 675,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "131:7:1",
+                      "src": "143:7:1",
                       "subdenomination": "ether",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_1000000000000000000_by_1",
@@ -298,21 +298,21 @@
                       },
                       "value": "1"
                     },
-                    "src": "123:15:1",
+                    "src": "135:15:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 667,
-                  "id": 671,
+                  "functionReturnParameters": 673,
+                  "id": 677,
                   "nodeType": "Return",
-                  "src": "116:22:1"
+                  "src": "128:22:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 673,
+            "id": 679,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -320,16 +320,16 @@
             "name": "etherToWei",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 664,
+              "id": 670,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 663,
+                  "id": 669,
                   "name": "price",
                   "nodeType": "VariableDeclaration",
-                  "scope": 673,
-                  "src": "68:10:1",
+                  "scope": 679,
+                  "src": "80:10:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -337,10 +337,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 662,
+                    "id": 668,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "68:4:1",
+                    "src": "80:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -350,20 +350,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "67:12:1"
+              "src": "79:12:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 667,
+              "id": 673,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 666,
+                  "id": 672,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 673,
-                  "src": "100:4:1",
+                  "scope": 679,
+                  "src": "112:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -371,10 +371,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 665,
+                    "id": 671,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "100:4:1",
+                    "src": "112:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -384,20 +384,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "99:6:1"
+              "src": "111:6:1"
             },
-            "scope": 674,
-            "src": "48:98:1",
+            "scope": 680,
+            "src": "60:102:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 675,
-        "src": "27:124:1"
+        "scope": 681,
+        "src": "35:136:1"
       }
     ],
-    "src": "0:153:1"
+    "src": "4:175:1"
   },
   "compiler": {
     "name": "solc",
@@ -405,5 +405,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.2",
-  "updatedAt": "2020-11-24T19:16:03.372Z"
+  "updatedAt": "2020-12-22T14:17:48.716Z"
 }
